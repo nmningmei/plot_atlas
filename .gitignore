@@ -125,5 +125,5 @@ dmypy.json
 .pyre/
 
 # nii
-.nii
-.nii.gz
+*.nii
+*.nii.gz
