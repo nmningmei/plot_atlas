@@ -50,22 +50,25 @@ masks = glob(os.path.join(data_dir,'*standard*'))
 # combining left and right rois for plotting
 # this is for validating if I have got the rois correctly
 
-#plt.close('all')
-#for ii,mask_name in enumerate(roi_names):
-#    mask = [item for item in masks if (mask_name in item)]
-#    temp = np.array([load_mri(f).get_data() for f in mask])
-#    temp = temp.sum(0)
-#    temp[temp > 0] = 1
-#    combined_mask = image.new_img_like(mask[0],temp,)
-#    fig,ax = plt.subplots()
-#    x,y,z = plotting.find_xyz_cut_coords(combined_mask)
-#    if mask_name == 'superiorfrontal':
-#        x,y,z = 0,20,42
-#    plotting.plot_roi(roi_img = combined_mask,
-#                      bg_img=the_brain,
-#                      draw_cross=False,
-#                      axes=ax,cut_coords=(x,y,z),
-#                      title = mask_name)
+plt.close('all')
+for ii,mask_name in enumerate(roi_names):
+    mask = [item for item in masks if (mask_name in item)]
+    temp = np.array([load_mri(f).get_data() for f in mask])
+    temp = temp.sum(0)
+    temp[temp > 0] = 1
+    combined_mask = image.new_img_like(mask[0],temp,)
+    fig,ax = plt.subplots()
+    x,y,z = plotting.find_xyz_cut_coords(combined_mask)
+    if mask_name == 'superiorfrontal':
+        x,y,z = 0,20,42
+    plotting.plot_roi(roi_img = combined_mask,
+                      bg_img=the_brain,
+                      draw_cross=False,
+                      axes=ax,
+                      cut_coords=(x,y,z),
+                      title = mask_name)
+    fig.savefig(os.path.join(fig_dir,
+                             f"{mask_name}.jpeg"))
 
 
 #plt.close('all')
