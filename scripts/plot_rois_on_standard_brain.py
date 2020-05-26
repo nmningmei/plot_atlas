@@ -50,6 +50,22 @@ masks = glob(os.path.join(data_dir,'*standard*'))
 # combining left and right rois for plotting
 # this is for validating if I have got the rois correctly
 
+
+name_map = {
+        'fusiform':'Fusiform gyrus',
+        'inferiorparietal':'Inferior parietal lobe',
+        'inferiortemporal':'Inferior temporal lobe',
+        'lateraloccipital':'Lateral occipital cortex',
+        'lingual':'Lingual',
+        'middlefrontal':'Middle frontal gyrus',
+        'parahippocampal':'Parahippocampal gyrus',
+        'pericalcarine':'Pericalcarine cortex',
+        'precuneus':'Precuneus',
+        'superiorfrontal':'Superior frontal gyrus',
+        'superiorparietal':'Superior parietal gyrus',
+        'ventrolateralPFC':'Inferior frontal gyrus',
+        }
+
 plt.close('all')
 for ii,mask_name in enumerate(roi_names):
     mask = [item for item in masks if (mask_name in item)]
@@ -61,6 +77,7 @@ for ii,mask_name in enumerate(roi_names):
     x,y,z = plotting.find_xyz_cut_coords(combined_mask)
     if mask_name == 'superiorfrontal':
         x,y,z = 0,20,42
+    mask_name = name_map[mask_name]
     plotting.plot_roi(roi_img = combined_mask,
                       bg_img=the_brain,
                       draw_cross=False,
@@ -86,6 +103,8 @@ reference = dict()
 for ii,(color,mask_name) in enumerate(zip(color_list,roi_names)):
     # pick the left and right hemisphere ROIs
     mask = [item for item in masks if (mask_name in item)]
+    # rename the ROIs for plotting
+    mask_name = name_map[mask_name]
     # put them into the same numpy array
     temp = np.array([load_mri(f).get_data() for f in mask])
     temp = temp.sum(0)
@@ -101,6 +120,7 @@ for ii,(color,mask_name) in enumerate(zip(color_list,roi_names)):
     reference[ii+1] = mask_name
     # create the legend handles and labels for plotting
     handles.append(Patch(facecolor = color))
+    
     labels.append(mask_name)
 
 # bound the mask
