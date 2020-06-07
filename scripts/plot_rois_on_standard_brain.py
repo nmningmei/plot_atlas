@@ -72,6 +72,7 @@ for ii,mask_name in enumerate(roi_names):
     temp = np.array([load_mri(f).get_data() for f in mask])
     temp = temp.sum(0)
     temp[temp > 0] = 1
+    print(f'{mask_name} has {np.sum(temp)} voxels')
     combined_mask = image.new_img_like(mask[0],temp,)
     fig,ax = plt.subplots()
     x,y,z = plotting.find_xyz_cut_coords(combined_mask)
