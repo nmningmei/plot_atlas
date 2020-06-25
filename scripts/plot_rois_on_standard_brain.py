@@ -59,6 +59,7 @@ name_map = {
         'lingual':'Lingual',
         'middlefrontal':'Middle frontal gyrus',
         'parahippocampal':'Parahippocampal gyrus',
+        'parahippocampal':'Parahippocampal gyrus',
         'pericalcarine':'Pericalcarine cortex',
         'precuneus':'Precuneus',
         'superiorfrontal':'Superior frontal gyrus',
