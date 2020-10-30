@@ -153,11 +153,11 @@ ax.legend(handles,
            frameon = False,
            )
 fig.savefig(os.path.join(fig_dir,'ROIs.jpeg'),
-            dpi = 400,
+#            dpi = 400,
             bbox_inches = 'tight',)
-fig.savefig(os.path.join('../../properties_of_unconscious_processing/figures','ROIs.jpeg'),
-            dpi = 400,
-            bbox_inches = 'tight',)
+#fig.savefig(os.path.join('../../properties_of_unconscious_processing/figures','ROIs.jpeg'),
+#            dpi = 400,
+#            bbox_inches = 'tight',)
 
 #left = [ '../data\\fmri_rois\\ctx-lh-parsopercularis.nii.gz',
 # '../data\\fmri_rois\\ctx-lh-parsorbitalis.nii.gz',
