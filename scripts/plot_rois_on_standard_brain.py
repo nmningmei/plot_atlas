@@ -140,7 +140,7 @@ plotting.plot_roi(roi_img = combined_mask,
                   draw_cross = False,
 #                  colorbar = True,
                   cmap = cmap,
-                  black_bg = False,
+                  black_bg = True,
                   axes = ax,
                   cut_coords = (x,y,z),#(0,-30,30),
                   )
@@ -152,7 +152,9 @@ ax.legend(handles,
            frameon = False,
            )
 fig.savefig(os.path.join(fig_dir,
-                         'supfigure4.eps'),
+                          'supfigure4.eps'),
+            facecolor = 'white',
+            edgecolor = 'white',
             dpi = 300,
             bbox_inches = 'tight')
 
