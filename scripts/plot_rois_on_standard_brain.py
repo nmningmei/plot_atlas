@@ -67,27 +67,27 @@ name_map = {
         'ventrolateralPFC':'Inferior frontal gyrus',
         }
 
-plt.close('all')
-for ii,mask_name in enumerate(roi_names):
-    mask = [item for item in masks if (mask_name in item)]
-    temp = np.array([load_mri(f).get_data() for f in mask])
-    temp = temp.sum(0)
-    temp[temp > 0] = 1
-    print(f'{mask_name} has {np.sum(temp)} voxels')
-    combined_mask = image.new_img_like(mask[0],temp,)
-    fig,ax = plt.subplots()
-    x,y,z = plotting.find_xyz_cut_coords(combined_mask)
-    if mask_name == 'superiorfrontal':
-        x,y,z = 0,20,42
-    mask_name = name_map[mask_name]
-    plotting.plot_roi(roi_img = combined_mask,
-                      bg_img=the_brain,
-                      draw_cross=False,
-                      axes=ax,
-                      cut_coords=(x,y,z),
-                      title = mask_name)
-    fig.savefig(os.path.join(fig_dir,
-                             f"{mask_name}.jpeg"))
+# plt.close('all')
+# for ii,mask_name in enumerate(roi_names):
+#     mask = [item for item in masks if (mask_name in item)]
+#     temp = np.array([load_mri(f).get_data() for f in mask])
+#     temp = temp.sum(0)
+#     temp[temp > 0] = 1
+#     print(f'{mask_name} has {np.sum(temp)} voxels')
+#     combined_mask = image.new_img_like(mask[0],temp,)
+#     fig,ax = plt.subplots()
+#     x,y,z = plotting.find_xyz_cut_coords(combined_mask)
+#     if mask_name == 'superiorfrontal':
+#         x,y,z = 0,20,42
+#     mask_name = name_map[mask_name]
+#     plotting.plot_roi(roi_img = combined_mask,
+#                       bg_img=the_brain,
+#                       draw_cross=False,
+#                       axes=ax,
+#                       cut_coords=(x,y,z),
+#                       title = mask_name)
+#     fig.savefig(os.path.join(fig_dir,
+#                              f"{mask_name}.jpeg"))
 
 
 #plt.close('all')
@@ -131,7 +131,6 @@ combined_mask[mask_boundary == 0] = 0
 # create a niftilImage from a numpy array
 combined_mask = image.new_img_like(mask[0],
                                    combined_mask,)
-
 fig,ax = plt.subplots(figsize = (15,5))
 # find the center of the combined ROI
 x,y,z = plotting.find_xyz_cut_coords(combined_mask)
@@ -152,27 +151,10 @@ ax.legend(handles,
            borderaxespad = 1,
            frameon = False,
            )
-fig.savefig(os.path.join(fig_dir,'ROIs.jpeg'),
-#            dpi = 400,
-            bbox_inches = 'tight',)
-#fig.savefig(os.path.join('../../properties_of_unconscious_processing/figures','ROIs.jpeg'),
-#            dpi = 400,
-#            bbox_inches = 'tight',)
-
-#left = [ '../data\\fmri_rois\\ctx-lh-parsopercularis.nii.gz',
-# '../data\\fmri_rois\\ctx-lh-parsorbitalis.nii.gz',
-# '../data\\fmri_rois\\ctx-lh-parstriangularis.nii.gz',]
-#right = [ '../data\\fmri_rois\\ctx-rh-parsopercularis.nii.gz',
-# '../data\\fmri_rois\\ctx-rh-parsorbitalis.nii.gz',
-# '../data\\fmri_rois\\ctx-rh-parstriangularis.nii.gz',]
-#
-#for side,side_name in zip([left,right],['l','r']):
-#    temp = np.array([load_mri(f).get_data() for f in side]).sum(0)
-#    temp_nifti = image.new_img_like(side[0],temp,)
-#    temp_nifti.to_filename(os.path.join(data_dir,f'ctx-{side_name}h-ventrolateralPFC.nii.gz'))
-
-
-
+fig.savefig(os.path.join(fig_dir,
+                         'supfigure4.eps'),
+            dpi = 300,
+            bbox_inches = 'tight')
 
 
 
