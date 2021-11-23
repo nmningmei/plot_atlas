@@ -1,0 +1,1 @@
+mri_convert /bcbl/home/public/Consciousness/uncon_feat/data/MRI/sub-01/anat/sub-01/mri/rawavg.mgz /bcbl/home/public/Consciousness/uncon_feat/data/MRI/sub-01/anat/sub-01/mri/orig.mgz --conform

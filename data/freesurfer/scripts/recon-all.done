@@ -1,0 +1,13 @@
+------------------------------
+SUBJECT sub-01
+START_TIME Mon Jul 15 12:12:23 CEST 2019
+END_TIME Mon Jul 15 21:15:46 CEST 2019
+RUNTIME_HOURS 9.056
+USER nmei
+HOST cajal-1-11.local
+PROCESSOR x86_64
+OS Linux
+UNAME Linux cajal-1-11.local 2.6.32-279.el6.x86_64 #1 SMP Wed Jun 13 18:24:36 EDT 2012 x86_64 x86_64 x86_64 GNU/Linux
+VERSION $Id: recon-all,v 1.580.2.16 2017/01/18 14:11:24 zkaufman Exp $
+CMDPATH /opt/freesurfer-6.0.0/freesurfer/bin/recon-all
+CMDARGS -all -i /bcbl/home/public/Consciousness/uncon_feat/data/MRI/sub-01/anat/20190409_174122t1mpragesagp21isoMGHs023a1001.nii.gz -subjid sub-01 -sd /bcbl/home/public/Consciousness/uncon_feat/data/MRI/sub-01/anat

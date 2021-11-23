@@ -22,7 +22,7 @@ data_dir = os.path.join('../data','fmri_rois')
 fig_dir = '../figures'
 if not os.path.exists(fig_dir):
     os.mkdir(fig_dir)
-
+collect_dir = '/export/home/nmei/nmei/properties_of_unconscious_processing/all_figures'
 #dataset = datasets.fetch_atlas_craddock_2012('../data')
 roi_names = """fusiform
 inferiorparietal
@@ -140,7 +140,7 @@ plotting.plot_roi(roi_img = combined_mask,
                   draw_cross = False,
 #                  colorbar = True,
                   cmap = cmap,
-                  black_bg = True,
+                  black_bg = False,
                   axes = ax,
                   cut_coords = (x,y,z),#(0,-30,30),
                   )
@@ -151,10 +151,8 @@ ax.legend(handles,
            borderaxespad = 1,
            frameon = False,
            )
-fig.savefig(os.path.join(fig_dir,
-                          'supfigure4.eps'),
-            facecolor = 'white',
-            edgecolor = 'white',
+fig.savefig(os.path.join(collect_dir,
+                          'supfigure17.eps'),
             dpi = 300,
             bbox_inches = 'tight')
 

@@ -1,0 +1,1 @@
+mris_inflate -rusage /bcbl/home/public/Consciousness/uncon_feat/data/MRI/sub-01/anat/sub-01/touch/rusage.mris_inflate.lh.dat ../surf/lh.smoothwm ../surf/lh.inflated

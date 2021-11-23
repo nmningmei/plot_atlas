@@ -1,0 +1,9 @@
+Logfile for pctsurfcon
+Mon Jul 15 20:44:40 CEST 2019
+setenv SUBJECTS_DIR /bcbl/home/public/Consciousness/uncon_feat/data/MRI/sub-01/anat
+cd /bcbl/home/public/Consciousness/uncon_feat/data/MRI/sub-01/anat/sub-01/scripts
+/opt/freesurfer-6.0.0/freesurfer/bin/pctsurfcon
+$Id: pctsurfcon,v 1.15 2016/02/12 21:43:15 zkaufman Exp $
+Linux cajal-1-11.local 2.6.32-279.el6.x86_64 #1 SMP Wed Jun 13 18:24:36 EDT 2012 x86_64 x86_64 x86_64 GNU/Linux
+FREESURFER_HOME /opt/freesurfer-6.0.0/freesurfer
+Cleaning up
