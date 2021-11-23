@@ -19,6 +19,7 @@ masker = NiftiMasker(mask,)
 masker.fit(brain)
 map_data = masker.transform(maps)
 
+
 pickes = """Occipital Fusiform Gyrus
 Inferior Temporal Gyrus, temporooccipital part
 Occipital Fusiform Gyrus
