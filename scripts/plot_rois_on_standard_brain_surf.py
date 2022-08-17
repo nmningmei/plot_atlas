@@ -102,7 +102,7 @@ ventrolateralPFC""".split('\n')
             'ventrolateralPFC':'Inferior frontal gyrus',
             }
     # figur ename 
-    figure name = 'ROI_surf.jpg'
+    figure_name = 'ROI_surf.jpg'
     
     #plt.close('all')
     handles, labels = [],[]
@@ -135,15 +135,6 @@ ventrolateralPFC""".split('\n')
         # just in case of overlapping
         temp[temp > 0] = ii + 1
         mask_items.append(image.new_img_like(mask[0],np.array(temp > 0,dtype = int)))
-        # # left brain
-        # left = vol_to_surf(image.new_img_like(mask[0],temp),fsaverage.pial_left,radius = 2,kind = 'line')
-        # left[left > 0] = ii + 1
-        # # right brain
-        # right = vol_to_surf(image.new_img_like(mask[0],temp),fsaverage.pial_left,radius = 2,kind = 'line')
-        # right[right > 0] = ii + 1
-        # # appending to list
-        # stacked_left.append(left)
-        # stacked_right.append(right)
         if ii == 0: # initialize the combined mask numpy array
             combined_mask = temp
         else: # add the rest of the ROIs to those we already have
