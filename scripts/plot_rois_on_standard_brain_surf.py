@@ -84,8 +84,8 @@ ventrolateralPFC""".split('\n')
     
     # combining left and right rois for plotting
     # this is for validating if I have got the rois correctly
-    
-    
+
+    # list of the ROIs I want to plot
     name_map = {
             'fusiform':'Fusiform gyrus',
             'inferiorparietal':'Inferior parietal lobe',
@@ -101,6 +101,8 @@ ventrolateralPFC""".split('\n')
             'superiorparietal':'Superior parietal gyrus',
             'ventrolateralPFC':'Inferior frontal gyrus',
             }
+    # figur ename 
+    figure name = 'ROI_surf.jpg'
     
     #plt.close('all')
     handles, labels = [],[]
@@ -215,7 +217,7 @@ ventrolateralPFC""".split('\n')
                )
     
     fig.savefig(os.path.join(fig_dir,
-                              'ROI_surf.jpg'),
+                              figure_name),
                 dpi = 300,
                 bbox_inches = 'tight')
 
