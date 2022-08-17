@@ -6,6 +6,8 @@
 
 # To plot ROIs
 
+## in the script `plot_rois_on_standard_brain_surf.py`
+
 1. prepare all the mask images in the data folder
 2. specify the mask folder
 ```python
