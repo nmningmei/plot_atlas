@@ -32,3 +32,8 @@ ventrolateralPFC""".split('\n')
 ```python
 figure name = 'ROI_surf.jpg'
 ```
+
+# plot stats brain maps
+![atlas](https://github.com/nmningmei/plot_atlas/blob/master/figures/scores_stat_map_in_surf.jpg)
+
+## in script `plot_randomise_stats_results_on_surf.py`
