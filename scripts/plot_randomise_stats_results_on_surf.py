@@ -61,8 +61,8 @@ def plot_surf_stats_with_contours(image_average,
                        colorbar         = colorbar,
                        vmin             = vmin,
                        vmax             = vmax,
-                       cbar_vmin        = 0.5,
-                       cbar_vmax        = vmax,
+                       cbar_vmin        = cbar_vmin,
+                       cbar_vmax        = cbar_vmax,
                        symmetric_cbar   = 'auto',
                        )
     try: # this works well when the cluster is big enough for stretching from standard space to freesurfer space
