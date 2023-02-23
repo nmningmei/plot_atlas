@@ -88,9 +88,9 @@ if __name__ == "__main__":
     # load the ROC AUC scores average across subjects
     average_masked  = masker.transform_single_imgs('../data/average_scores.nii.gz')[0]
     # load the corrected p values
-    tval            = masker.transform_single_imgs('../data/randomise_tfce_corrp_tstat1.nii.gz')[0]
+    pval            = masker.transform_single_imgs('../data/randomise_tfce_corrp_tstat1.nii.gz')[0]
     # load the t values
-    pval            = masker.transform_single_imgs('../data/randomise_tstat1.nii.gz')[0]
+    tval            = masker.transform_single_imgs('../data/randomise_tstat1.nii.gz')[0]
     # convert p values into log space for better visualization
     pval            = np.abs(-np.log(1 - pval))
     # threshold by alpha = 0.05
