@@ -62,13 +62,7 @@ inferiorparietal
 inferiortemporal
 lateraloccipital
 lingual
-middlefrontal
-parahippocampal
-pericalcarine
-precuneus
-superiorfrontal
-superiorparietal
-ventrolateralPFC""".split('\n')
+precuneus""".split('\n')
     
     #parsorbitalis
     #parstriangularis
@@ -115,7 +109,7 @@ ventrolateralPFC""".split('\n')
     cmap = ListedColormap(color_list)
     
     import matplotlib.colors as mcolors
-    colors = list(mcolors.CSS4_COLORS.keys())[:len(roi_names)]
+    colors = list(mcolors.CSS4_COLORS.keys())[:len(roi_names)+1]
     
     # for color checking
     mask_items = []
@@ -128,7 +122,7 @@ ventrolateralPFC""".split('\n')
         left_masks.append(mask[0])
         right_masks.append(mask[1])
         # rename the ROIs for plotting
-        mask_name = name_map[mask_name]
+        mask_name = name_map[mask_name].title()
         # put them into the same numpy array
         temp = np.array([np.asarray(load_mri(f).dataobj) for f in mask])
         temp = temp.sum(0)
@@ -163,7 +157,7 @@ ventrolateralPFC""".split('\n')
                         map_right=right_mesh,
                         )
     
-    fig,ax = plt.subplots(figsize = (6*2,5*2),
+    fig,ax = plt.subplots(figsize = (8,8),
                           nrows = 2,
                           ncols = 2,
                           subplot_kw={'projection':'3d'})
